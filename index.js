@@ -1,15 +1,44 @@
 var express = require('express');
 var app = express();
 
-app.get('/hello/:firstname', function (req, res) {
-  var result = req.params.firstname;
-  res.send('Hello ' + result + '!')
+
+
+
+app.get('/op/:operator/:firstOperand/:secondOperand', function(req, res) {
+
+// empty object 
+  var output = { 
+  operator:req.params.operator,
+  firstOperand: req.params.firstOperand,
+  secondOperand: req.params.secondOperand,
+  solution: "default"
+// empty to be filled with output.solution from functions
+  };
+  
+  if (req.params.operator === "add") {
+    output.solution = Number(req.params.firstOperand) + Number(req.params.secondOperand);
+    res.json(output);
+  }
+  else if(req.params.operator === "subtract"){
+    output.solution = Number(req.params.firstOperand) - Number(req.params.secondOperand);
+    res.json(output);
+  }
+  else if(req.params.operator === "multiply"){
+    output.solution = Number(req.params.firstOperand) * Number(req.params.secondOperand);
+    res.json(output)
+  }
+  else if(req.params.operator === "divide"){
+    output.solution = Number(req.params.firstOperand)/ Number(req.params.secondOperand);
+    res.json(output)
+  }
+
 });
+
 
 /* YOU DON'T HAVE TO CHANGE ANYTHING BELOW THIS LINE :) */
 
 // Boilerplate code to start up the web server
-var server = app.listen(process.env.PORT, process.env.IP, function () {
+var server = app.listen(process.env.PORT, process.env.IP, function() {
   var host = server.address().address;
   var port = server.address().port;
 
