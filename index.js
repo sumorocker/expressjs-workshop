@@ -1,13 +1,10 @@
 var express = require('express');
 var app = express();
 
-app.get('/hello', function (req, res) {
-  res.send('<h1>Hello World!</h1>');
+app.get('/hello/:firstname', function (req, res) {
+  var result = req.params.firstname;
+  res.send('Hello ' + result + '!')
 });
-
-
-
-
 
 /* YOU DON'T HAVE TO CHANGE ANYTHING BELOW THIS LINE :) */
 
