@@ -26,35 +26,6 @@ app.get('/entry/:entryId', function(req, res) {
       res.send('Error 404')
     }
   })
-  // app.get('/op/:operator/:firstOperand/:secondOperand', function(req, res) {
-
-// empty object 
-//   var output = { 
-//   operator:req.params.operator,
-//   firstOperand: req.params.firstOperand,
-//   secondOperand: req.params.secondOperand,
-//   solution: "default"
-// // empty to be filled with output.solution from functions
-//   };
-
-//   if (req.params.operator === "add") {
-//     output.solution = Number(req.params.firstOperand) + Number(req.params.secondOperand);
-//     res.json(output);
-//   }
-//   else if(req.params.operator === "subtract"){
-//     output.solution = Number(req.params.firstOperand) - Number(req.params.secondOperand);
-//     res.json(output);
-//   }
-//   else if(req.params.operator === "multiply"){
-//     output.solution = Number(req.params.firstOperand) * Number(req.params.secondOperand);
-//     res.json(output)
-//   }
-//   else if(req.params.operator === "divide"){
-//     output.solution = Number(req.params.firstOperand)/ Number(req.params.secondOperand);
-//     res.json(output)
-//   }
-
-// });
 
 //YOU DON'T HAVE TO CHANGE ANYTHING BELOW THIS LINE :) 
 
